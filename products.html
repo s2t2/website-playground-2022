@@ -1,0 +1,52 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <h1>Products</h1>
+
+    <ul id="products-list">
+    </ul>
+
+    <script>
+
+        console.log("FETCH PRODUCTS AND DISPLAY THEM")
+
+        var productsList = document.getElementById("products-list")
+
+        // GOAL 1: FETCH THE DATA
+
+        var url = "https://raw.githubusercontent.com/prof-rossetti/internet-technologies/main/data/products.json"
+
+        fetch(url)
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                console.log("DATA", data) // this is the data you're looking for
+
+
+                // GOAL 2: DISPLAY DATA ON THE PAGE
+
+                data.forEach(function(item) { // uses the most simple params possible
+                    console.log(item);
+
+                    // can even create new elements:
+                    var listItem = document.createElement("li")
+                    //listItem.innerHTML = item["name"]
+                    listItem.innerHTML = item["name"] + " " + item["price"] + " " + item["description"]
+
+                    productsList.appendChild(listItem)
+
+                })
+
+            })
+
+    </script>
+</body>
+</html>
