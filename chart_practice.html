@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+    <div id="my-chart"></div>
+
+    <script>
+
+        dates = [1, 2, 3, 4]
+        prices = [10, 15, 13, 17]
+
+        var trace1 = {
+            x: dates,
+            y: prices,
+            type: 'scatter'
+        };
+
+        //var trace2 = {
+        //    x: [1, 2, 3, 4],
+        //    y: [16, 5, 11, 9],
+        //    type: 'scatter'
+        //};
+
+        //var data = [trace1, trace2];
+        var data = [trace1];
+
+        Plotly.newPlot('my-chart', data);
+
+    </script>
+</body>
+</html>
